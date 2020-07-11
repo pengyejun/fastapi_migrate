@@ -1,13 +1,15 @@
 import argparse
 import os
 
-from .command import Config
+from fastapi import FastAPI
+from sqlalchemy.ext.declarative import declarative_base
+from fastapi_migrate.command import Config
 
 current_app = None
 
 
 class Migrate:
-    def __init__(self, app=None, model=None, directory='migrations', db_uri=None, **kwargs):
+    def __init__(self, app: FastAPI = None, model=None, directory: str = 'migrations', db_uri: str = None, **kwargs):
         self.configure_callbacks = []
         self.model = model
         self.directory = directory
@@ -15,7 +17,7 @@ class Migrate:
         if app is not None and model is not None and db_uri is not None:
             self.init_app(app, model, directory, db_uri)
 
-    def init_app(self, app, model=None, directory=None, db_uri=None, **kwargs):
+    def init_app(self, app: FastAPI, model=None, directory: str = None, db_uri: str = None, **kwargs):
         self.model = model or self.model
         self.directory = directory or self.directory
         sqlalchemy_binds = self.alembic_ctx_kwargs.pop("SQLALCHEMY_BINDS", None) or kwargs.pop("SQLALCHEMY_BINDS", {})
