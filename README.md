@@ -1,9 +1,10 @@
-# fastapi_migrate
+Fastapi-Migrate
+===============
+fastapi-Migrate is an extension that handles SQLAlchemy database migrations for fastapi applications using Alembic. 
 fastapi alembic数据库迁移工具,参考flask_migrate
 
-使用方法与flask_migrate一致
+# Usage
+## 
 
-# 安装方式
+# Installing
 ## pip install fastapi_migrate
-
-
