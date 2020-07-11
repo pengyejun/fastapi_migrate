@@ -4,7 +4,7 @@ fastapi-Migrate is an extension that handles SQLAlchemy database migrations for 
 
 Tips:
 -----
-Since fastapi does not provide a command line similar to flask, you need to integrate the command line yourself. [How to use] (./examples)
+Since fastapi does not provide a command line similar to flask, you need to integrate the command line yourself. [How to use](./examples)
 
 Usage:
 Similar to flask_migrate
