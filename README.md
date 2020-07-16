@@ -19,4 +19,4 @@ python [your_command](./examples/cli.py) db upgrade
 
 
 # Installing
-## pip install fastapi_migrate
+pip install fastapi_migrate
