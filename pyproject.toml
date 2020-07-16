@@ -1,12 +1,11 @@
 [tool.poetry]
 name = "fastapi_migrate"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["pengyj <p15281826276@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
-fastapi = "^0.58.1"
 alembic = "^1.4.2"
 click = "^7.1.2"
 

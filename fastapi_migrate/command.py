@@ -4,7 +4,6 @@ import logging
 from pathlib import Path
 from functools import wraps
 
-import fastapi
 from alembic import command
 from alembic.config import Config as AlembicConfig
 from alembic.util import CommandError
@@ -32,9 +31,9 @@ def catch_errors(f):
     return wrapped
 
 
-def current_app() -> fastapi.FastAPI:
+def current_app():
     from fastapi_migrate import current_app
-    if not isinstance(current_app, fastapi.FastAPI):
+    if not current_app:
         log.error(
             "No fastapi application running, Check if Migate(app) has been executed")
     return current_app
